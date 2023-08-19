@@ -83,6 +83,23 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                 children: [],
               )),
+              floatingActionButton: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <FloatingActionButton>[
+                  FloatingActionButton(
+                    onPressed: () {},
+                    child: Icon(Icons.add),
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {},
+                    child: Icon(Icons.edit),
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {},
+                    child: Icon(Icons.delete),
+                  )
+                ],
+              ),
             );
           } else {
             return Scaffold(
