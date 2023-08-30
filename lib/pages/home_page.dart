@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crud_firestore/pages/add_data_page.dart';
 import 'package:crud_firestore/provider/provider_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -83,23 +84,14 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                 children: [],
               )),
-              floatingActionButton: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <FloatingActionButton>[
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.edit),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.delete),
-                  )
-                ],
-              ),
+              floatingActionButton:
+                  Consumer<CRUD>(builder: (context, provider, _) {
+                return FloatingActionButton(
+                  onPressed: () => Scaffold.of(context)
+                      .showBottomSheet((context) => AddData()),
+                  child: Icon(Icons.add),
+                );
+              }),
             );
           } else {
             return Scaffold(

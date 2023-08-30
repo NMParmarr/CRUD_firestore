@@ -12,6 +12,8 @@ void main() async {
     providers: [
       ChangeNotifierProvider<GoogleLoginProvider>(
           create: (_) => GoogleLoginProvider()),
+      ChangeNotifierProvider<CRUD>(
+          create: (_) => CRUD()),
     ],
     child: const MyApp(),
   ));
